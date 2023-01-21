@@ -1,0 +1,161 @@
+p {
+  font-family: Lato;
+}
+.app-title{
+  text-align: center;
+}
+#inventory-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+.item-price {
+  margin-right: 5px;
+  margin-left: 5px; 
+  background-color: #449947;
+  color: white;
+  /* color: #418f43;
+  padding: 6px 12px;  */
+  border: none;
+}
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  cursor: default;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+/* tr:nth-child(even) {
+  background-color: #f2f2f2;
+} */
+.action-button {
+  margin-right: 5px;
+  margin-left: 5px; 
+}
+button {
+  background-color: #4caf50;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  cursor: pointer;
+}
+.delete-button {
+  background-color: #ff0000; 
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  cursor: pointer;
+}
+.delete-button:hover {
+  background-color: #bb0000; 
+}
+/* ADD PRODUCT BUTTON */
+.open-modal>p{
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: rgb(108, 230, 60);
+  text-align: center;
+}
+.open-modal{
+  line-height: 70px;
+  position: absolute;
+  bottom: 20px;
+  right: 60px;
+  cursor: pointer;
+}
+.open-modal:hover{
+  animation: rotation 0.25s ;
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+/* CSS Styles for Add Product MODAL */
+.close-modal {
+  font-size: 3.5rem;
+  position: absolute;
+  color: rgb(0, 0, 0);
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+.close-modal:hover{
+  color: #ff0000;
+}
+label {
+  font-size: 18px; /* Increase font size */
+  font-weight: bold; /* Make labels bold */
+}
+
+input {
+  padding: 12px 20px; /* Add some padding */
+  border-radius: 5px; /* Rounded corners */
+  border: 1px solid #ccc; /* Add a border */
+  margin-bottom: 10px; /* Add some margin */
+  width: 92%; /* Full width input */
+  font-size: 18px; /* Increase font size */
+}
+
+input:focus {
+  border: 1px solid #4caf50; /* Change border color on focus */
+  outline: none; /* Remove the outline */
+}
+
+.add-item {
+  background-color: #4caf50; /* Green background */
+  color: white; /* White text */
+  padding: 12px 20px; /* Some padding */
+  border: none; /* Remove border */
+  cursor: pointer; /* Add a pointer cursor on hover */
+  width: 70%; /* Full width button */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+  margin-top: 10px; /* Add some margin */
+}
+
+div > .add-item,
+div > input {
+  margin: 0 auto;
+  display: block;
+  right: 0;
+}
+div > label {
+  text-align: center;
+}
+
+button:hover {
+  background-color: #3e8e41; /* Darker green on hover */
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+.modal-content {
+  position: absolute;
+  border-radius: 15px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  height: 70%;
+  background-color: white;
+  padding: 20px;
+}

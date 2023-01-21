@@ -1,0 +1,78 @@
+<h1 class="app-title">ITEM INVENTORY</h1>
+<div class="modal" *ngIf="isModalOpen">
+<!-- <div class="modal"> -->
+  <div class="modal-content">
+  <span class="close-modal" (click)="isModalOpen = !isModalOpen">&times;</span>
+    <h2>Add Product</h2>
+    <label for="">Product Name: </label><br />
+    <input type="text" placeholder="Onion" required [(ngModel)]="itemName" />
+    <br />
+    <label for="">Description: </label><br />
+    <input
+      type="text"
+      placeholder="Description"
+      required
+      [(ngModel)]="itemDesc"
+    />
+    <br />
+    <label for="">Quantity:</label><br />
+    <input type="text" placeholder="Quantity" required [(ngModel)]="itemQty" />
+    <br />
+    <label for="">Price: </label><br />
+    <input type="text" placeholder="Price" required [(ngModel)]="itemPrice" />
+    <br />
+    <label for="">SKU: </label><br />
+    <input type="text" placeholder="SKU" required [(ngModel)]="itemSKU" />
+    <br />
+    <br />
+    <button class="add-item"
+    (click)="
+      addItem(
+        products.length + 1,
+        itemName,
+        itemDesc,
+        itemQty,
+        itemPrice,
+        itemSKU
+      )
+    "
+  >
+    Add New Item</button
+  >
+  </div>
+<br />
+</div>
+<!-- ADD PRODUCT MODAL-->
+<div class="open-modal" (click)="isModalOpen = !isModalOpen">
+<p>+</p>
+</div>
+<table id="inventory-table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Product Name</th>
+      <th>Description</th>
+      <th>Quantity</th>
+      <th>SKU</th>
+      <th>Price</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products; let i = index">
+      <td>{{ product.id }}</td>
+      <td>{{ product.name }}</td>
+      <td>{{ product.description }}</td>
+      <td>{{ product.quantity }}</td>
+      <td>{{ product.sku }}</td>
+      <td>
+        <p class="item-price">${{ product.price }}</p>
+      </td>
+      <td>
+        <button class="action-button delete-button" (click)="deleteItem(i)">
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
